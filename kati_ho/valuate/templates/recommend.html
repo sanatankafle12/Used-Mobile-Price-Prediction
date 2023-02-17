@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/recommend.css' %}" />
+  </head>
+  <body>
+    {% load static %}
+    <div class="navbar">
+      <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="70px"></a></h1>
+      <a href="{% url 'valuate' %}" class = "button">VALUATE</a>
+      <a href="{% url 'compare' %}" class = "button">COMPARE</a>
+      <a href="{% url 'sell' %}" class = "button">SELL</a>
+      <a href="{% url 'recommend' %}" class = "button" id="recommend">RECOMMEND</a>
+      <div class="button2">
+      {% if request.user.is_authenticated %}
+         <a href="{% url 'logout' %}" class="btn btn-outline-success" >Logout</a>
+      {% else %}
+         <a href="{% url 'login' %}" class="btn btn-outline-success" id="login">Login</a>
+         <a href="{% url 'signup' %}" class="btn btn-outline-success">signup</a>
+      {% endif %}
+    </div>
+    </div>
+  <p id="text"> Buying phone can be a tedious job. <br> Tell us what you want and we'll choose the phone for you</p>
+  <div class="container">
+<form method="post">
+    
+  {% csrf_token %} 
+    <label for="want">What do you want it for?</label>
+    <input type="text"  id="want" name="want"><br>
+
+    <label for="ram">Ram preference:</label>
+    <input type="text"  id="ram" name="ram"><br>
+
+    <label for="battery">Battery preference:</label>
+    <input type="text"  id="battery" name="battery"><br>
+
+    <label for="brand">OS preference:</label>
+    <input type="text" id="brand" name="brand"><br>
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="Storage">Storage preference:</label>
+    <input type="text"  id="Storage" name="Storage"><br>
+
+    <label for="back_camera">Back Camera preference:</label>
+    <input type="text"  id="back_camera" name="back_camera"><br>
+
+    <label for="front_camera">Front Camera preference:</label>
+    <input type="text"  id="front_camera" name="front_camera"><br>
+
+    <label for="screen_size">Screen Size preference:</label>
+    <input type="text"  id="screen_size" name="screen_size"><br>
+
+    <label for="resolution">Resolutaion:</label>
+    <input type="text"  id="resolution" name="resolutaion"><br>
+
+    <button type="submit"  class="btn btn-outline-dark" id = "button_">Recommend</button>
+  </div>
+</form>

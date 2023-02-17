@@ -1,0 +1,108 @@
+.navbar {
+    background-image: linear-gradient(to right,rgba(19, 16, 86, 0.85), rgba(19, 16, 86, 0.9), rgb(19, 16, 86,0.95));
+  }
+  .button{
+    color:white;
+    font-size: 15px;
+  }
+
+  .button:hover{
+    text-decoration: none;
+    color:blanchedalmond;
+  }
+
+  .button1{
+    color:white;
+    padding-left: 100px;
+  }
+  .button1:hover{
+    color: white;
+  }
+
+  #login{
+    margin-right: 20px;
+  }
+
+  #valuate{
+    text-decoration: underline blanchedalmond;
+    color:blanchedalmond;
+  }
+  .text{
+    color:rgb(84, 80, 80);
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    padding-top: 50px;
+    margin-left: 450px;
+    width: 700px;
+    text-align: center;
+  }
+  
+  .brand input{
+    visibility: hidden;
+  }
+
+  label {
+cursor: pointer;
+  }
+
+  .brand p{
+    padding-left:42%;
+    font-size: 30px;
+    color: green;
+  }
+
+  input:checked+label{
+    outline: 2px solid green;
+  }
+  .tab {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0000007f;
+    margin-left: 400px;
+    margin-right: 400px;
+    border: 2px solid black;
+  }
+  
+  .tab button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: white;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    align-items: inherit;
+    border-top: none;
+    width: 500px;
+  }
+.brand{
+  align-items: center;
+  width: 900px;
+  margin-left: 25%;
+}
+.brand p{
+  margin-left: -120px;
+  margin-top: 30px;
+}
+.tabcontent{
+  display: none;
+}

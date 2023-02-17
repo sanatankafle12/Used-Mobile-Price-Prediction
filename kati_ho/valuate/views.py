@@ -4,12 +4,24 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from .models import Listing
 
 # Create your views here.
 
 
 def homepage(request):
-    return render(request,'home.html')
+    listings = Listing.objects.all()
+    context = {
+        'listings':listings
+    }
+    return render(request,'home.html',context)
+
+def listing(request,id):
+    listing = Listing.objects.get(id=id)
+    context = {
+        'listing':listing,
+    }
+    return render(request,'')
 
 def signuppage(request):
     if request.method == "POST":
@@ -41,19 +53,23 @@ def logout(request):
     auth.logout(request)
     return render(request, "home.html")
 
-
 def valuate(request):
+    if(request.method == "POST"):
+        brandname = request.POST.get('brand')
+        print(brandname)
     return render(request,'valuate.html')
 
 def compare(request):
     return render(request,'compare.html')
 
-def check_price(request):
-    return render(request,'check_price.html')
+def recommend(request):
+    if(request.method == "POST"):
+        brand = request.POST.get("brand_name")
+        type1 = request.POST.get('type')
+        practice.view(brand,type1)
+    return render(request,'recommend.html')
 
-def window_shop(request):
-    return render(request,'window_shop.html')
-
+@login_required(login_url='/login/')
 def sell_product(request):
     return render(request,'sell_product.html')
 

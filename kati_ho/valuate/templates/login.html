@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Design by foolishdeveloper.com -->
-    <title>Signup Page</title>
+    <title>Login Page</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <!--Stylesheet-->
     <style media="screen">
       *,
 *:before,
@@ -17,7 +15,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #080710;
+    background-color: #1a2161;
 }
 .background{
     width: 430px;
@@ -33,31 +31,15 @@ body{
     position: absolute;
     border-radius: 50%;
 }
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-}
+
 form{
-    height: 600px;
-    width: 450px;
-    background-color: rgba(255,255,255,0.13);
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.07);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
-    left: 50%;
+    left: 75%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
@@ -86,12 +68,12 @@ label{
 }
 input{
     display: block;
-    height: 40px;
+    height: 50px;
     width: 100%;
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
     padding: 0 10px;
-    margin-top: 2px;
+    margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
 }
@@ -99,7 +81,7 @@ input{
     color: #e5e5e5;
 }
 button{
-    margin-top: 14px;
+    margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;
@@ -131,33 +113,26 @@ button{
 .social i{
   margin-right: 4px;
 }
-
+.logo{
+    padding-top: 17%;
+    padding-left: 20%;
+}
     </style>
 </head>
+{% load static %}
 <body>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    <form action="" method="post">
+    <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="170px"></a></h1>
+    <form method="post">
+        <h3>Login Here</h3>
         {% csrf_token %} 
-        <h3>Signup Here</h3>
-
         <label for="username">Username</label>
-        <input type="text" placeholder="Username" name="username" id="username">
+        <input type="text" placeholder="Enter Username" id="username" name="username">
 
-        <label for="email">Email</label>
-        <input type="email" placeholder="Email or Phone" name="email" id="email">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="pass">
 
-        <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1">
-
-
-        <label for="password2">Confrom Password</label>
-        <input type="password" placeholder="Confrom Password" id="password2" name="password2">
-        <button type="submit">Signup</button>
-        
-        <a href="{% url 'login' %}" >Already have an account?</a>
+        <button type="submit">Log In</button>
+        <a href="{% url 'signup' %}" >Create a account</a>
     </form>
 </body>
 </html>

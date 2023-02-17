@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/valuate.css' %}" />
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+  </head>
+  <body>
+    {% load static %}
+    {% csrf_token %} 
+    <div class="navbar">
+      <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="70px"></a></h1>
+      <a href="{% url 'valuate' %}" class = "button" id="valuate">VALUATE</a>
+      <a href="{% url 'compare' %}" class = "button">COMPARE</a>
+      <a href="{% url 'sell' %}" class = "button">SELL</a>
+      <a href="{% url 'recommend' %}" class = "button">RECOMMEND</a>
+      <div class="button2">
+      {% if request.user.is_authenticated %}
+         <a href="{% url 'logout' %}" class="btn btn-outline-success" >Logout</a>
+      {% else %}
+         <a href="{% url 'login' %}" class="btn btn-outline-success" id="login">Login</a>
+         <a href="{% url 'signup' %}" class="btn btn-outline-success">signup</a>
+      {% endif %}
+    </div>
+    </div>
+    <div class = "text">
+      <p> Wanna sell your phone? Don't know how much to sell it for?<br>Follow the steps below and get your price :)</p>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'activated-tab')" id="one">Brand</button>
+      <button class="tablinks" onclick="openCity(event, 'deactivated-tab')">Genral Info</button>
+      <button class="tablinks" onclick="openCity(event, 'deactivated-tab2')" id="two">Condition Info</button>
+    </div>
+  <form method="post">
+  {% csrf_token %} 
+    <div id="activated-tab" class="tabcontent">
+      <div class="brand">
+        <p > SELECT YOUR BRAND</p>
+        <input id="b1" type="radio" value="Iphone" name="brand"/>
+        <label for="b1">
+          <img src="{% static 'images/iphone.jpg'%}/" height="140px" width="140px">
+        </label>
+        <input id="b2" type="radio" value="Huawei" name="brand"/>
+        <label for="b2">
+          <img src="{% static 'images/Huawei.jpg'%}/" height="140px" width="140px">
+        </label>
+        <input id="b3" type="radio" value="Mi" name="brand"/>
+        <label for="b3">
+          <img src="{% static 'images/Mi.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b4" type="radio" value="Samsung" name="brand"/>
+        <label for="b4">
+          <img src="{% static 'images/samsung.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b5" type="radio" value="oppo" name="brand"/>
+        <label for="b5">
+          <img src="{% static 'images/oppo.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b6" type="radio" value="one_plus" name="brand"/>
+        <label for="b6">
+          <img src="{% static 'images/one_plus.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b7" type="radio" value="poco" name="brand"/>
+        <label for="b7">
+          <img src="{% static 'images/poco.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b8" type="radio" value="vivo" name="brand"/>
+        <label for="b8">
+          <img src="{% static 'images/vivo.png'%}/" height="140px" width="140px">
+        </label>
+        <input id="b9" type="radio" value="realme" name="brand"/>
+        <label for="b9">
+          <img src="{% static 'images/realme.png'%}/" height="140px" width="140px">
+        </label>
+        <label id="other">
+          <input id="b10" type="radio" value="other" name="brand"/>
+          <label for="b10">
+            <img src = "{% static 'images/other.png' %}" height="140px" width="140px">
+          </label>
+        </label>
+      </div>
+    </div>
+    <div id = "deactivated-tab" class="tabcontent">
+      <label for="intial">Initial Price</label>
+      <input type="text"  id="initial" name="intial">
+
+      <label for="OS">Operating System</label>
+      <input type="text"  id="OS" name="OS">
+      
+      <label for="ram">Ram</label>
+      <input type="text"  id="ram" name="ram">
+
+      <label for="Storage">Internal Storage</label>
+      <input type="text" id="Storage" name="Storage">
+
+      <label for="battery">Battery</label>
+      <input type="text" id="battery" name="battery">
+
+      <label for="Camera">Front Camera</label>
+      <input type="text" id="Camera" name="Camera">
+
+      <label for="Camera2">Main Camera</label>
+      <input type="text"  id="Camera2" name="Camera2">
+
+      <label for="4g">is 4G available?</label>
+      <input type="text"  id="4g" name="4g">
+
+      <label for="Dual">Dual Sim</label>
+      <input type="text"  id="Dual" name="Dual">
+
+      <label for="3g">is 3G available?</label>
+      <input type="text"  id="3g" name="3g">
+
+      <label for="Cores">No of Cores</label>
+      <input type="text"  id="Cores" name="Cores">
+
+      <label for="Display_resolution">Display resolutaion</label>
+      <input type="text"  id="Display_resolution" name="Display_resolution">
+      
+      <label for="Screen_size">Screen Size</label>
+      <input type="text"  id="Screen_size" name="Screen_size">
+
+  </div>
+  
+
+  <div id = "deactivated-tab2" class="tabcontent">
+
+    <label for="battery">On the Scale of 1-10, rate your battery condition!</label>
+    <input type="text"  id="battery" name="battery">
+    
+    <label for="display">On the Scale of 1-10, rate your display condition!</label>
+    <input type="text"  id="display" name="display">
+
+    <label for="Speaker">On the Scale of 1-10, rate your Speaker and Microphone condition!</label>
+    <input type="text" id="Speaker" name="Speaker">
+
+    <label for="Scratches">On the Scale of 1-10, rate your Physical phone condition![Scratches and damages]</label>
+    <input type="text" id="Scratches" name="Scratches">
+
+    <label for="warranty">Is warranty available?</label>
+    <input type="text" id="warranty" name="warranty">
+
+    <label for="charger">Is charger available?</label>
+    <input type="text"  id="charger" name="charger">
+
+    <label for="Earphone">Is Earphone available?</label>
+    <input type="text"  id="Earphone" name="Earphone">
+
+  <button type="submit">Valuate</button>
+</div>
+</form>
+</body>
+</html>

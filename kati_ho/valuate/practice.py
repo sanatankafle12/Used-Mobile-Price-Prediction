@@ -1,2 +1,2 @@
-def sum2(a,b):
-    return(a+b)
+def view(a,b):
+    print(a,b)

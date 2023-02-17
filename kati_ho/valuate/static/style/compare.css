@@ -1,0 +1,38 @@
+.navbar {
+    background-image: linear-gradient(to right,rgba(19, 16, 86, 0.85), rgba(19, 16, 86, 0.9), rgb(19, 16, 86,0.95));
+  }
+  .button{
+    color:white;
+    font-size: 15px;
+  }
+
+  .button:hover{
+    text-decoration: none;
+    color:blanchedalmond;
+  }
+
+  .button1{
+    color:white;
+    padding-left: 100px;
+  }
+  .button1:hover{
+    color: white;
+  }
+
+  #login{
+    margin-right: 20px;
+  }
+
+  #compare{
+    text-decoration: underline white;
+    color:blanchedalmond;
+  }
+  .text{
+color:rgb(84, 80, 80);
+font-size: 20px;
+font-family:'Times New Roman', Times, serif;
+padding-top: 50px;
+margin-left: 450px;
+width: 700px;
+text-align: center;
+}

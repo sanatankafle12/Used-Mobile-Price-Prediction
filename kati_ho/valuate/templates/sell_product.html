@@ -1,0 +1,68 @@
+<style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: lightgray;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-links {
+      display: flex;
+      justify-content: space-between;
+      width: 25%;
+    }
+
+    .navbar-links a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+  </style>
+{% csrf_token %} 
+<div class="navbar">
+    <h1 class = "logo" ><a href = "{% url 'home' %}">Kati Ho??</a></h1>
+</div>
+<div class = "navbar">
+  <a href="{% url 'valuate' %}" class="btn btn-primary">valuate</a>
+  <a href="{% url 'compare' %}" class="btn btn-primary">compare</a>
+  <a href="{% url 'sell' %}" class="btn btn-primary">post</a>
+  <a href="{% url 'recommend' %}" class="btn btn-primary">Recommend</a>
+</div>
+<div class="navbar">
+<form method="post">
+    {% csrf_token %} 
+    
+    <label for="model name">Model name</label>
+    <input type="text"  id="model name" name="model name">
+
+    <label for="battery">Battery</label>
+    <input type="text"  id="battery" name="battery">
+    
+    <label for="want">Photos</label>
+    <input type="text"  id="want" name="want">
+
+    <label for="brand">OS preference</label>
+    <input type="text" id="brand" name="brand">
+
+    <label for="price">Price</label>
+    <input type="text" id="price" name="price">
+
+
+    <label for="Storage">Storage preference</label>
+    <input type="text"  id="Storage" name="Storage">
+
+    <label for="back_camera">Back Camera preference</label>
+    <input type="text"  id="back_camera" name="back_camera">
+
+    <label for="front_camera">Front Camera preference</label>
+    <input type="text"  id="front_camera" name="front_camera">
+
+    <button type="submit">Recommend</button>
+</form>

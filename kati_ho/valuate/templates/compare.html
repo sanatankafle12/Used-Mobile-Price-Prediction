@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/compare.css' %}" />
+  </head>
+  <body>
+    {% csrf_token %} 
+    <div class="navbar">
+      <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="70px"></a></h1>
+      <a href="{% url 'valuate' %}" class = "button">VALUATE</a>
+      <a href="{% url 'compare' %}" class = "button" id="compare">COMPARE</a>
+      <a href="{% url 'sell' %}" class = "button">SELL</a>
+      <a href="{% url 'recommend' %}" class = "button">RECOMMEND</a>
+      <div class="button2">
+      {% if request.user.is_authenticated %}
+         <a href="{% url 'logout' %}" class="btn btn-outline-success" >Logout</a>
+      {% else %}
+         <a href="{% url 'login' %}" class="btn btn-outline-success" id="login">Login</a>
+         <a href="{% url 'signup' %}" class="btn btn-outline-success">signup</a>
+      {% endif %}
+    </div>
+    </div>
+    <div class="text">
+      <p> Choose 2 phones you are confused to choose between. We'll help you compare them.</p>
+    </div>
