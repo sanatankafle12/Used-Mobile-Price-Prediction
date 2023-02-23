@@ -20,6 +20,7 @@
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
       }
+
       </script>
   </head>
   <body>
@@ -103,73 +104,201 @@
       </div>
     </div>
     <div id = "deactivated-tab" class="tabcontent">
-      <label for="intial">Initial Price</label>
-      <input type="text"  id="initial" name="intial">
+      <div class="form-row" >
+        <div class="form-group col-md-6">
+          <label for="intial">Initial Price</label>
+          <input type="text"  id="initial" name="initial" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="OS">Operating System</label>
+          <input type="text"  id="OS" name="OS" class="form-control">
+        </div>
+      </div>
 
-      <label for="OS">Operating System</label>
-      <input type="text"  id="OS" name="OS">
-      
-      <label for="ram">Ram</label>
-      <input type="text"  id="ram" name="ram">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="ram">Ram preference:</label>
+          <select id="ram" name="ram" class="form-control">
+            <option selected>Choose...</option>
+            <option value="2">2 GB</option>
+            <option value="4">4 GB</option>
+            <option value="6">6 GB</option>
+            <option value="8">8 GB</option>
+            <option value="16">16 GB</option>
+            <option value="32">32 GB</option>
+            <option value="64">64 GB</option>
+          </select>
+        </div>
+          <div class="form-group col-md-6">
+            <label for="Storage">Storage preference:</label>
+            <select id="Storage" name="Storage" class="form-control">
+              <option selected>Choose...</option>
+              <option value="8">8 GB</option>
+              <option value="16">16 GB</option>
+              <option value="32">32 GB</option>
+              <option value="64">64 GB</option>
+              <option value="128">128 GB</option>
+              <option value="256">256 GB</option>
+              <option value="512">512 GB</option>
+            </select>
+          </div>
+        </div>
 
-      <label for="Storage">Internal Storage</label>
-      <input type="text" id="Storage" name="Storage">
+        <div class="form-row" >
+          <div class="form-group col-md-6">
+            <label for="battery1">Battery :</label>
+            <input type="text"  id="battery1" name="battery1" class="form-control" >
+          </div>
 
-      <label for="battery">Battery</label>
-      <input type="text" id="battery" name="battery">
+          <div class="form-group col-md-6">
+            <label for="4g">is 4G available?</label>
+            <select id="4g" name="4g" class="form-control">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
 
-      <label for="Camera">Front Camera</label>
-      <input type="text" id="Camera" name="Camera">
+        <div class="form-row" >
+          <div class="form-group col-md-6">
+            <label for="back_camera">Back Camera preference:</label>
+            <input type="text"  id="back_camera" name="back_camera" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="front_camera">Front Camera preference:</label>
+            <input type="text"  id="front_camera" name="front_camera" class="form-control">
+          </div>
+        </div>
+        <div class="form-row" >
+          <div class="form-group col-md-6">
+            <label for="Dual">Dual Sim</label>
+            <select id="Dual" name="Dual" class="form-control">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="3g">is 3G available?</label>
+            <select id="3g" name="3g" class="form-control">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
 
-      <label for="Camera2">Main Camera</label>
-      <input type="text"  id="Camera2" name="Camera2">
-
-      <label for="4g">is 4G available?</label>
-      <input type="text"  id="4g" name="4g">
-
-      <label for="Dual">Dual Sim</label>
-      <input type="text"  id="Dual" name="Dual">
-
-      <label for="3g">is 3G available?</label>
-      <input type="text"  id="3g" name="3g">
-
-      <label for="Cores">No of Cores</label>
-      <input type="text"  id="Cores" name="Cores">
-
-      <label for="Display_resolution">Display resolutaion</label>
-      <input type="text"  id="Display_resolution" name="Display_resolution">
-      
-      <label for="Screen_size">Screen Size</label>
-      <input type="text"  id="Screen_size" name="Screen_size">
+      <div class="form-row" >
+        <div class="form-group col-md-6">
+          <label for="screen_size">Screen Size preference:</label>
+          <input type="text"  id="screen_size" name="screen_size" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="resolution">Resolutaion:</label>
+          <input type="text"  id="resolution" name="resolution" class="form-control">
+        </div>
+      </div>
 
   </div>
   
 
   <div id = "deactivated-tab2" class="tabcontent">
-
+  <div class="form-row">
     <label for="battery">On the Scale of 1-10, rate your battery condition!</label>
-    <input type="text"  id="battery" name="battery">
-    
+    <select id="battery" name="battery" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 </option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+
+  <div class="form-row">
     <label for="display">On the Scale of 1-10, rate your display condition!</label>
-    <input type="text"  id="display" name="display">
-
+    <select id="display" name="display" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 </option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+  
+  <div class="form-row">
     <label for="Speaker">On the Scale of 1-10, rate your Speaker and Microphone condition!</label>
-    <input type="text" id="Speaker" name="Speaker">
+    <select id="Speaker" name="Speaker" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 </option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
 
-    <label for="Scratches">On the Scale of 1-10, rate your Physical phone condition![Scratches and damages]</label>
-    <input type="text" id="Scratches" name="Scratches">
+  <div class="form-row">
+    <label for="Scratches">On the Scale of 1-10, rate your Physical phone condition!</label>
+    <select id="Scratches" name="Scratches" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 </option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
 
-    <label for="warranty">Is warranty available?</label>
-    <input type="text" id="warranty" name="warranty">
 
-    <label for="charger">Is charger available?</label>
-    <input type="text"  id="charger" name="charger">
+    <div class="form-row" >
+      <div class="form-group col-md-6">
+        <label for="warranty">Is warranty available?</label>
+        <select id="warranty" name="warranty" class="form-control">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+      <label for="Earphone">Is Earphone available?</label>
+      <select id="Earphone" name="Earphone" class="form-control">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+    </div>
+  </div>
 
-    <label for="Earphone">Is Earphone available?</label>
-    <input type="text"  id="Earphone" name="Earphone">
-
-  <button type="submit">Valuate</button>
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="charger">Is charger available?</label>
+      <select id="charger" name="charger" class="form-control">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="age">Enter Used time in months</label>
+      <input type="text"  id="age" name="age" class="form-control">
+    </div>
+</div>
+<button class="btn btn-outline-success" type="submit" >Valuate</button>
 </div>
 </form>
+The Predicted Price is: {{ price1 }}
 </body>
 </html>

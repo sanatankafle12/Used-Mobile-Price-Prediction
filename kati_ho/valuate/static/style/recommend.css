@@ -28,18 +28,14 @@
     color: blanchedalmond;
   }
   #text{
-color:rgba(24, 193, 29, 0.85);
+color:rgba(39, 188, 29, 0.85);
 font-size: 20px;
 font-family:'Times New Roman', Times, serif;
-padding-top: 50px;
-margin-left: 450px;
-width: 700px;
-text-align: center;
 }
 
 .container{
     width: 600px;
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -48,8 +44,4 @@ text-align: center;
 #button_{
   margin-left: 40%;
   margin-top: 30px;
-}
-
-.inp{
-  text:red;
 }

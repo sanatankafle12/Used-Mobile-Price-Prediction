@@ -29,36 +29,92 @@
 <form method="post">
     
   {% csrf_token %} 
+    <div class="form-group col-md-8">
     <label for="want">What do you want it for?</label>
-    <input type="text"  id="want" name="want"><br>
-
-    <label for="ram">Ram preference:</label>
-    <input type="text"  id="ram" name="ram"><br>
-
-    <label for="battery">Battery preference:</label>
-    <input type="text"  id="battery" name="battery"><br>
-
-    <label for="brand">OS preference:</label>
-    <input type="text" id="brand" name="brand"><br>
-
-    <label for="price">Price:</label>
-    <input type="text" id="price" name="price"><br>
-
-    <label for="Storage">Storage preference:</label>
-    <input type="text"  id="Storage" name="Storage"><br>
-
-    <label for="back_camera">Back Camera preference:</label>
-    <input type="text"  id="back_camera" name="back_camera"><br>
-
-    <label for="front_camera">Front Camera preference:</label>
-    <input type="text"  id="front_camera" name="front_camera"><br>
-
-    <label for="screen_size">Screen Size preference:</label>
-    <input type="text"  id="screen_size" name="screen_size"><br>
-
-    <label for="resolution">Resolutaion:</label>
-    <input type="text"  id="resolution" name="resolutaion"><br>
-
-    <button type="submit"  class="btn btn-outline-dark" id = "button_">Recommend</button>
+    <select id="want" name="want" class="form-control">
+      <option selected>Choose...</option>
+      <option value="Gaming">Gaming</option>
+      <option value="Photography">Photography</option>
+      <option value="General">General Use</option>
+      <option value="Studing">Studing</option>
+    </select>
   </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="ram">Ram preference:</label>
+    <select id="ram" name="ram" class="form-control">
+      <option selected>Choose...</option>
+      <option value="2">2 GB</option>
+      <option value="4">4 GB</option>
+      <option value="6">6 GB</option>
+      <option value="8">8 GB</option>
+      <option value="16">16 GB</option>
+      <option value="32">32 GB</option>
+      <option value="64">64 GB</option>
+    </select>
+  </div>
+    <div class="form-group col-md-6">
+      <label for="Storage">Storage preference:</label>
+      <select id="Storage" name="Storage" class="form-control">
+        <option selected>Choose...</option>
+        <option value="8">8 GB</option>
+        <option value="16">16 GB</option>
+        <option value="32">32 GB</option>
+        <option value="64">64 GB</option>
+        <option value="128">128 GB</option>
+        <option value="256">256 GB</option>
+        <option value="512">512 GB</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="battery">Battery preference:</label>
+      <input type="text"  id="battery" name="battery" class="form-control" >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="os">OS preference:</label>
+      <select id="os" name="os" class="form-control">
+      <option value="1">Android</option>
+      <option value="0">iOS</option>
+    </select>
+    </div>
+  </div>
+
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="back_camera">Back Camera preference:</label>
+      <input type="text"  id="back_camera" name="back_camera" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="front_camera">Front Camera preference:</label>
+      <input type="text"  id="front_camera" name="front_camera" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="screen_size">Screen Size preference:</label>
+      <input type="text"  id="screen_size" name="screen_size" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="resolution">Resolutaion:</label>
+      <input type="text"  id="resolution" name="resolution" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="price" class="form-control">
+    </div>
+    <div class="form-group col-md-2">
+      <button type="submit"  class="btn btn-outline-dark" id = "button_">Recommend</button>
+    </div>
+
+  </div>
+  </div>
+  <div class="container-fluid">
+  <h style="font-size: 20px;">{{ data1 }}</h>
+</div>
 </form>

@@ -31,7 +31,6 @@
     color:rgb(84, 80, 80);
     font-size: 20px;
     font-family:'Times New Roman', Times, serif;
-    padding-top: 50px;
     margin-left: 450px;
     width: 700px;
     text-align: center;
@@ -60,9 +59,8 @@ cursor: pointer;
     justify-content: space-between;
     align-items: center;
     background-color: #0000007f;
-    margin-left: 400px;
     margin-right: 400px;
-    border: 2px solid black;
+    border: 2px solid rgb(14, 14, 14);
   }
   
   .tab button {
@@ -73,7 +71,7 @@ cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-    color: white;
+    color: rgb(17, 16, 16);
   }
   
   /* Change background color of buttons on hover */
@@ -83,7 +81,7 @@ cursor: pointer;
   
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #ccc;
+    background-color: #e7e7e7;
   }
   
   /* Style the tab content */

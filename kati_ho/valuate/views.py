@@ -1,12 +1,10 @@
 from django.http import HttpResponse
-from . import practice
+from . import practice,valuateprice,recommendmobile
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Listing
-
-# Create your views here.
 
 
 def homepage(request):
@@ -51,12 +49,25 @@ def loginpage(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request, "home.html")
+    return homepage(request)
 
 def valuate(request):
     if(request.method == "POST"):
         brandname = request.POST.get('brand')
-        print(brandname)
+        Initial_price = request.POST.get('initial')
+        battery_condition = request.POST.get('battery')
+        display_condition = request.POST.get('display')
+        audio_condition = request.POST.get('Speaker')
+        phone_condition = request.POST.get('Scratches')
+        age = request.POST.get('age')
+        warranty = request.POST.get('warranty')
+        earphone = request.POST.get('Earphone')
+        charger = request.POST.get('charger')
+        price1 = valuateprice.valuate1([[int(Initial_price),int(age),int(battery_condition),int(display_condition),int(audio_condition),int(phone_condition),int(warranty),int(earphone),int(charger)]])
+        price_dict = {'price1':price1}
+        ram = request.POST.get('ram')
+        print(brandname,ram)
+        return render(request,"valuate.html",price_dict)
     return render(request,'valuate.html')
 
 def compare(request):
@@ -64,9 +75,21 @@ def compare(request):
 
 def recommend(request):
     if(request.method == "POST"):
-        brand = request.POST.get("brand_name")
-        type1 = request.POST.get('type')
-        practice.view(brand,type1)
+        ram = request.POST.get('ram')
+        want = request.POST.get('want')
+        battery = request.POST.get('battery')
+        price = request.POST.get('price')
+        Storage = request.POST.get('Storage')
+        back_camera = request.POST.get('back_camera')
+        front_camera = request.POST.get('front_camera')
+        screen_size = request.POST.get('screen_size')
+        res = request.POST.get('resolution')
+        width,height = res.split('x')
+        pixels = int(width)*int(height)
+        os =request.POST.get('os')
+        data1 = recommendmobile.rec_func([[int(price),int(front_camera),int(back_camera),int(battery),int(os),int(Storage),int(ram),8,pixels]])
+        data = {"data1":data1}
+        return render(request,'recommend.html',data)
     return render(request,'recommend.html')
 
 @login_required(login_url='/login/')
