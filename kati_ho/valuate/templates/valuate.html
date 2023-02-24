@@ -20,7 +20,6 @@
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
       }
-
       </script>
   </head>
   <body>
@@ -296,9 +295,9 @@
       <input type="text"  id="age" name="age" class="form-control" required>
     </div>
 </div>
-<button class="btn btn-outline-success" type="submit" >Valuate</button>
+<button class="btn btn-outline-success" type="submit">Valuate</button>
 </div>
 </form>
-The Predicted Price is: {{ price1 }}
+  <p class="output">{{ price1 }}</p>
 </body>
 </html>

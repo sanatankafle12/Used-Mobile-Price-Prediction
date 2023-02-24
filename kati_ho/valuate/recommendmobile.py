@@ -31,4 +31,4 @@ def rec_func(list1):
     y_pred = knn.predict(list1)[0]
     distances, indices = knn.kneighbors(list1)
     label = train_data_set[y == y_pred]
-    return(label[['Price','Model','ram','storage','Primary_cam','Front_cam']])
+    return(label[['Price','Model','brand','storage','Primary_cam','Front_cam']])

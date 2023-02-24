@@ -59,9 +59,8 @@ def valuate(request):
         earphone = request.POST.get('Earphone')
         charger = request.POST.get('charger')
         price1 = valuateprice.valuate1([[int(Initial_price),int(age),int(battery_condition),int(display_condition),int(audio_condition),int(phone_condition),int(warranty),int(earphone),int(charger)]])
-        price_dict = {'price1':price1}
+        price_dict = {'price1':"The Predicted Price is: " + str(round(price1[0],2))}
         ram = request.POST.get('ram')
-        print(brandname,ram)
         return render(request,"valuate.html",price_dict)
     return render(request,'valuate.html')
 
@@ -83,9 +82,9 @@ def recommend(request):
         pixels = int(width)*int(height)
         os =request.POST.get('os')
         data1 = recommendmobile.rec_func([[int(price),int(front_camera),int(back_camera),int(battery),int(os),int(Storage),int(ram),8,pixels]])
-        data = {"Price":data1['Price'].values[0],
-                "Model":data1['Model'].values[0],
-                "Ram":data1['ram'].values[0]}
+        data = {"Price": "Price = " + str(data1['Price'].values[0]),
+                "Model":"Model = "+ str(data1['Model'].values[0]),
+                "Brand":"Brand = "+ str(data1['ram'].values[0])}
         return render(request,'recommend.html',data)
     return render(request,'recommend.html')
 

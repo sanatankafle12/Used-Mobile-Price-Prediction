@@ -109,3 +109,9 @@ cursor: pointer;
 .tabcontent{
   display: none;
 }
+
+.output{
+  margin-left: 30%;
+  margin-top: 10%;
+  font-size: 50px;
+}
