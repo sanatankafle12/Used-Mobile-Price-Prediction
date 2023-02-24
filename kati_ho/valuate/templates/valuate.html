@@ -107,18 +107,18 @@
       <div class="form-row" >
         <div class="form-group col-md-6">
           <label for="intial">Initial Price</label>
-          <input type="text"  id="initial" name="initial" class="form-control">
+          <input type="text"  id="initial" name="initial" class="form-control" required>
         </div>
         <div class="form-group col-md-6">
           <label for="OS">Operating System</label>
-          <input type="text"  id="OS" name="OS" class="form-control">
+          <input type="text"  id="OS" name="OS" class="form-control" required>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="ram">Ram preference:</label>
-          <select id="ram" name="ram" class="form-control">
+          <select id="ram" name="ram" class="form-control" required>
             <option selected>Choose...</option>
             <option value="2">2 GB</option>
             <option value="4">4 GB</option>
@@ -131,7 +131,7 @@
         </div>
           <div class="form-group col-md-6">
             <label for="Storage">Storage preference:</label>
-            <select id="Storage" name="Storage" class="form-control">
+            <select id="Storage" name="Storage" class="form-control" required>
               <option selected>Choose...</option>
               <option value="8">8 GB</option>
               <option value="16">16 GB</option>
@@ -147,12 +147,12 @@
         <div class="form-row" >
           <div class="form-group col-md-6">
             <label for="battery1">Battery :</label>
-            <input type="text"  id="battery1" name="battery1" class="form-control" >
+            <input type="text"  id="battery1" name="battery1" class="form-control" required>
           </div>
 
           <div class="form-group col-md-6">
             <label for="4g">is 4G available?</label>
-            <select id="4g" name="4g" class="form-control">
+            <select id="4g" name="4g" class="form-control" required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
@@ -162,24 +162,24 @@
         <div class="form-row" >
           <div class="form-group col-md-6">
             <label for="back_camera">Back Camera preference:</label>
-            <input type="text"  id="back_camera" name="back_camera" class="form-control">
+            <input type="text"  id="back_camera" name="back_camera" class="form-control" required>
           </div>
           <div class="form-group col-md-6">
             <label for="front_camera">Front Camera preference:</label>
-            <input type="text"  id="front_camera" name="front_camera" class="form-control">
+            <input type="text"  id="front_camera" name="front_camera" class="form-control" required>
           </div>
         </div>
         <div class="form-row" >
           <div class="form-group col-md-6">
             <label for="Dual">Dual Sim</label>
-            <select id="Dual" name="Dual" class="form-control">
+            <select id="Dual" name="Dual" class="form-control" required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
           <div class="form-group col-md-6">
             <label for="3g">is 3G available?</label>
-            <select id="3g" name="3g" class="form-control">
+            <select id="3g" name="3g" class="form-control" required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
@@ -189,11 +189,11 @@
       <div class="form-row" >
         <div class="form-group col-md-6">
           <label for="screen_size">Screen Size preference:</label>
-          <input type="text"  id="screen_size" name="screen_size" class="form-control">
+          <input type="text"  id="screen_size" name="screen_size" class="form-control" required>
         </div>
         <div class="form-group col-md-6">
           <label for="resolution">Resolutaion:</label>
-          <input type="text"  id="resolution" name="resolution" class="form-control">
+          <input type="text"  id="resolution" name="resolution" class="form-control" required>
         </div>
       </div>
 
@@ -293,7 +293,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="age">Enter Used time in months</label>
-      <input type="text"  id="age" name="age" class="form-control">
+      <input type="text"  id="age" name="age" class="form-control" required>
     </div>
 </div>
 <button class="btn btn-outline-success" type="submit" >Valuate</button>

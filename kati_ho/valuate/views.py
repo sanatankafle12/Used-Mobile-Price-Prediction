@@ -5,6 +5,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Listing
+from .forms import valuate_listing
 
 
 def homepage(request):
@@ -14,12 +15,6 @@ def homepage(request):
     }
     return render(request,'home.html',context)
 
-def listing(request,id):
-    listing = Listing.objects.get(id=id)
-    context = {
-        'listing':listing,
-    }
-    return render(request,'')
 
 def signuppage(request):
     if request.method == "POST":
@@ -88,14 +83,26 @@ def recommend(request):
         pixels = int(width)*int(height)
         os =request.POST.get('os')
         data1 = recommendmobile.rec_func([[int(price),int(front_camera),int(back_camera),int(battery),int(os),int(Storage),int(ram),8,pixels]])
-        data = {"data1":data1}
+        data = {"Price":data1['Price'].values[0],
+                "Model":data1['Model'].values[0],
+                "Ram":data1['ram'].values[0]}
         return render(request,'recommend.html',data)
     return render(request,'recommend.html')
 
 @login_required(login_url='/login/')
 def sell_product(request):
-    return render(request,'sell_product.html')
+    form = valuate_listing()
+    if request.method == 'POST':
+        form = valuate_listing(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:
+        print(form)
+        form = valuate_listing()
+    context = {
+        'form':form
+    }
+    return render(request,'sell_product.html',context)
 
-def buy(request):
-    return render(request,'buy.html')
 

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Listing(models.Model):
     brand = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     battery = models.IntegerField()
     back_camera = models.IntegerField()
@@ -12,14 +13,11 @@ class Listing(models.Model):
     storage = models.IntegerField()
     price = models.IntegerField()
     size = models.IntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    res = models.CharField(max_length=20)
     #image = models.ImageField()
+    condition = models.IntegerField()
 
-    def __str__(self):
-        value = self.brand+ " "+self.want
-        return (value)
-
-class Compare(models.Model):
+""" class Compare(models.Model):
     price = models.IntegerField()
     fc = models.CharField(max_length=10)
     pc = models.CharField(max_length=10)
@@ -28,3 +26,4 @@ class Compare(models.Model):
     Model = models.CharField(max_length=100)
     battery = models.IntegerField()
     Link = models.CharField(max_length=200)
+ """

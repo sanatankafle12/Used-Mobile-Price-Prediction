@@ -28,9 +28,10 @@
     color: blanchedalmond;
   }
   #text{
-color:rgba(39, 188, 29, 0.85);
-font-size: 20px;
-font-family:'Times New Roman', Times, serif;
+    margin-left: 35%;
+    color:rgba(39, 188, 29, 0.85);
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .container{

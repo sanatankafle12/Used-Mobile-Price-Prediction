@@ -24,26 +24,26 @@
       {% endif %}
     </div>
     </div>
-  <p id="text"> Buying phone can be a tedious job. <br> Tell us what you want and we'll choose the phone for you</p>
+  <p id="text">  &emsp;&emsp;&emsp;&emsp; Buying phone can be a tedious job. <br> Tell us what you want and we'll choose the phone for you</p>
   <div class="container">
 <form method="post">
     
   {% csrf_token %} 
+  <div class="form-row">
     <div class="form-group col-md-8">
     <label for="want">What do you want it for?</label>
-    <select id="want" name="want" class="form-control">
-      <option selected>Choose...</option>
+    <select id="want" name="want" class="form-control" required>
       <option value="Gaming">Gaming</option>
       <option value="Photography">Photography</option>
       <option value="General">General Use</option>
       <option value="Studing">Studing</option>
     </select>
   </div>
+</div>
   <div class="form-row">
   <div class="form-group col-md-6">
-    <label for="ram">Ram preference:</label>
+    <label for="ram">Ram :</label>
     <select id="ram" name="ram" class="form-control">
-      <option selected>Choose...</option>
       <option value="2">2 GB</option>
       <option value="4">4 GB</option>
       <option value="6">6 GB</option>
@@ -54,9 +54,9 @@
     </select>
   </div>
     <div class="form-group col-md-6">
-      <label for="Storage">Storage preference:</label>
+      <label for="Storage">Storage :</label>
       <select id="Storage" name="Storage" class="form-control">
-        <option selected>Choose...</option>
+
         <option value="8">8 GB</option>
         <option value="16">16 GB</option>
         <option value="32">32 GB</option>
@@ -70,7 +70,7 @@
   <div class="form-row" >
     <div class="form-group col-md-6">
       <label for="battery">Battery preference:</label>
-      <input type="text"  id="battery" name="battery" class="form-control" >
+      <input type="text"  id="battery" name="battery" class="form-control" required>
     </div>
     <div class="form-group col-md-6">
       <label for="os">OS preference:</label>
@@ -84,29 +84,29 @@
   <div class="form-row" >
     <div class="form-group col-md-6">
       <label for="back_camera">Back Camera preference:</label>
-      <input type="text"  id="back_camera" name="back_camera" class="form-control">
+      <input type="text"  id="back_camera" name="back_camera" class="form-control" required>
     </div>
     <div class="form-group col-md-6">
       <label for="front_camera">Front Camera preference:</label>
-      <input type="text"  id="front_camera" name="front_camera" class="form-control">
+      <input type="text"  id="front_camera" name="front_camera" class="form-control" required>
     </div>
   </div>
 
   <div class="form-row" >
     <div class="form-group col-md-6">
       <label for="screen_size">Screen Size preference:</label>
-      <input type="text"  id="screen_size" name="screen_size" class="form-control">
+      <input type="text"  id="screen_size" name="screen_size" class="form-control" required>
     </div>
     <div class="form-group col-md-6">
       <label for="resolution">Resolutaion:</label>
-      <input type="text"  id="resolution" name="resolution" class="form-control">
+      <input type="text"  id="resolution" name="resolution" class="form-control" required>
     </div>
   </div>
 
   <div class="form-row" >
     <div class="form-group col-md-6">
       <label for="price">Price:</label>
-      <input type="text" id="price" name="price" class="form-control">
+      <input type="text" id="price" name="price" class="form-control" required>
     </div>
     <div class="form-group col-md-2">
       <button type="submit"  class="btn btn-outline-dark" id = "button_">Recommend</button>
@@ -114,7 +114,9 @@
 
   </div>
   </div>
-  <div class="container-fluid">
-  <h style="font-size: 20px;">{{ data1 }}</h>
+  <div>
+  <h style="font-size: 20px;">Price = {{ Price }}</h><br>
+  <h style="font-size: 20px;">Model = {{ Model }}</h><br>
+  <h style="font-size: 20px;">Ram = {{ Ram }}</h>
 </div>
 </form>

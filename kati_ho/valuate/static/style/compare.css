@@ -36,3 +36,34 @@ margin-left: 450px;
 width: 700px;
 text-align: center;
 }
+
+.Phone{
+
+  margin-left: 20%;
+}
+#Phone1,#Phone2,#Compared{
+  display: inline;
+}
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 20%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
