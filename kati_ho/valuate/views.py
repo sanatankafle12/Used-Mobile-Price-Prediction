@@ -82,9 +82,11 @@ def recommend(request):
         pixels = int(width)*int(height)
         os =request.POST.get('os')
         data1 = recommendmobile.rec_func([[int(price),int(front_camera),int(back_camera),int(battery),int(os),int(Storage),int(ram),8,pixels]])
-        data = {"Price": "Price = " + str(data1['Price'].values[0]),
+        data = {
+                "String": "RECOMMENDED MODEL: ",
+                "Price": "Price = " + str(data1['Price'].values[0]),
                 "Model":"Model = "+ str(data1['Model'].values[0]),
-                "Brand":"Brand = "+ str(data1['ram'].values[0])}
+                "Brand":"Brand = "+ str(data1['brand'].values[0])}
         return render(request,'recommend.html',data)
     return render(request,'recommend.html')
 
@@ -92,7 +94,7 @@ def recommend(request):
 def sell_product(request):
     form = valuate_listing()
     if request.method == 'POST':
-        form = valuate_listing(request.POST)
+        form = valuate_listing(data=request.POST,files=request.FILES)
         if form.is_valid():
             form.save()
             return redirect("home")

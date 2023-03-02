@@ -14,8 +14,9 @@ class Listing(models.Model):
     price = models.IntegerField()
     size = models.IntegerField()
     res = models.CharField(max_length=20)
-    #image = models.ImageField()
+    image = models.ImageField(upload_to="imag/")
     condition = models.IntegerField()
+    
 
 """ class Compare(models.Model):
     price = models.IntegerField()

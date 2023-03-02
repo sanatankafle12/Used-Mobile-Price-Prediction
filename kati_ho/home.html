@@ -26,28 +26,26 @@
     </div>
     </div>
       {% for x in listings %} 
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="margin-top: 50px;" id="card">
-        <div class="card-body" style="margin-left: 50%;"></div>
-            <div style="display:inline-block;">
-                <img src="{{ x.image.url }}" alt="Image" width="300" height="300"  />
-            </div>
-            <div style="display: inline-block; width: 350px;">
-                <h5 class="card-title">Brand : {{ x.brand }}</h5>
-                <p class="card-text">Model : {{ x.model }}</p>
-                <p class="card-text">description : {{ x.description }}</p>
-                <p class="card-text"> Ram : {{ x.ram }} GB</p>
-            </div>
-            <div style="display: inline-block;">
-                <p class="card-text"> Battery : {{ x.battery }} mAh</p>
-                <p class="card-text"> Storage : {{ x.storage }} GB</p>
-                <p class="card-text"> Front Cam : {{ x.front_camera }} MP</p>
-                <p class="card-text"> Back Cam : {{ x.back_camera }} MP</p>
-            </div>
-            <div style="display: inline-block;">
-                <a href="#" class="btn btn-outline-secondary">Compare</a>
-            </div>
-        </div>
+      <div class="shadow-lg p-3 mb-5 bg-white rounded" style="margin-top: 50px;" id="card">
+        <img class="card-img-top" src="{{ x.image.url }}" alt="Image"/>
+        <div class="card-body" style="margin-left: 50%;">
+          <div style="display: inline-block; width: 350px;">
+      <h5 class="card-title">Brand : {{ x.brand }}</h5>
+      <p class="card-text">Model : {{ x.model }}</p>
+      <p class="card-text">description : {{ x.description }}</p>
+      <p class="card-text"> Ram : {{ x.ram }} GB</p>
     </div>
+    <div style="display: inline-block;">
+      <p class="card-text"> Battery : {{ x.battery }} mAh</p>
+      <p class="card-text"> Storage : {{ x.storage }} GB</p>
+      <p class="card-text"> Front Cam : {{ x.front_camera }} MP</p>
+      <p class="card-text"> Back Cam : {{ x.back_camera }} MP</p>
+    </div>
+    <div style="display: inline-block;">
+      <a href="#" class="btn btn-outline-secondary">Compare</a>
+    </div>
+    </div>
+  </div>
       {% endfor %}
   </div>
   </div>
