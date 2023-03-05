@@ -29,7 +29,7 @@
       <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="70px"></a></h1>
       <a href="{% url 'valuate' %}" class = "button" id="valuate">VALUATE</a>
       <a href="{% url 'compare' %}" class = "button">COMPARE</a>
-      <a href="{% url 'sell' %}" class = "button">SELL</a>
+      <a href="{% url 'sell' %}" class = "button">LIST</a>
       <a href="{% url 'recommend' %}" class = "button">RECOMMEND</a>
       <div class="button2">
       {% if request.user.is_authenticated %}

@@ -13,7 +13,7 @@
       <h1 class = "logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}/" height="70px"></a></h1>
       <a href="{% url 'valuate' %}" class = "button">VALUATE</a>
       <a href="{% url 'compare' %}" class = "button" id="compare">COMPARE</a>
-      <a href="{% url 'sell' %}" class = "button">SELL</a>
+      <a href="{% url 'sell' %}" class = "button">LIST</a>
       <a href="{% url 'recommend' %}" class = "button">RECOMMEND</a>
       <div class="button2">
       {% if request.user.is_authenticated %}
@@ -30,28 +30,74 @@
     <table>
       <thead>
         <tr>
+          <th>Features</th>
           <th>Phone1</th>
           <th>Phone2</th>
-          <th>Compared Features</th>
+          <th>Remarks</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>Brand</td>
           <td>Feature 1</td>
           <td>Feature 1</td>
           <td>Comparison of Feature 1</td>
         </tr>
         <tr>
+          <td>Price</td>
           <td>Feature 2</td>
           <td>Feature 2</td>
           <td>Comparison of Feature 2</td>
         </tr>
         <tr>
+          <td>Condition</td>
           <td>Feature 3</td>
           <td>Feature 3</td>
           <td>Comparison of Feature 3</td>
         </tr>
-        <!-- Add more rows for additional features -->
+        <tr>
+          <td>Battery</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Ram</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Front Camera</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Back Camera</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Size</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+        <tr>
+          <td>Resolutation</td>
+          <td>Feature 3</td>
+          <td>Feature 3</td>
+          <td>Comparison of Feature 3</td>
+        </tr>
+
       </tbody>
     </table>
     

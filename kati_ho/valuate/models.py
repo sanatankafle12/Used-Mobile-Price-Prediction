@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Listing(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
@@ -12,7 +11,7 @@ class Listing(models.Model):
     ram = models.IntegerField()
     storage = models.IntegerField()
     price = models.IntegerField()
-    size = models.IntegerField()
+    size = models.FloatField()
     res = models.CharField(max_length=20)
     image = models.ImageField(upload_to="imag/")
     condition = models.IntegerField()

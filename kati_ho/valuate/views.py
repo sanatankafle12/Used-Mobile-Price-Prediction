@@ -1,11 +1,12 @@
 from django.http import HttpResponse
 from . import practice,valuateprice,recommendmobile
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Listing
 from .forms import valuate_listing
+
 
 
 def homepage(request):
@@ -65,6 +66,7 @@ def valuate(request):
     return render(request,'valuate.html')
 
 def compare(request):
+    phone_id = request.GET.get('phone_id')
     return render(request,'compare.html')
 
 def recommend(request):
