@@ -47,7 +47,7 @@
         <p class="card-text"> Ram : {{ x.ram }} GB</p>
         <p class="card-text"> Size : {{ x.size }} inch</p>
         <p class="card-text"> Resolutaion : {{ x.res }} </p>
-        <a href="{% url 'compare' %}?phone_id={{ x.id }}" class="btn btn-outline-secondary btn-compare" data-phone-id="{{ x.id }}">Compare</a>
+        <a href="{% url 'compare' x.id %}" class="btn btn-outline-secondary btn-compare">Compare</a>
     </div>
       <div style="display: inline-block; margin-left: 50px; ;">
         <p class="card-text"> Description : {{ x.description }} </p>

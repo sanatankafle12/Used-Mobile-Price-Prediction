@@ -27,6 +27,8 @@
     <div class="text">
       <p> Choose 2 phones you are confused to choose between. We'll help you compare them.</p>
     </div>
+  <div >
+  <div >
     <table>
       <thead>
         <tr>
@@ -39,67 +41,83 @@
       <tbody>
         <tr>
           <td>Brand</td>
-          <td>Feature 1</td>
-          <td>Feature 1</td>
-          <td>Comparison of Feature 1</td>
+          <td>{{ phone.brand }}</td>
+          <td>{{ phone2.brand }}</td>
+          <td>{{ compared.Brand }}</td>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>{{ phone.model }}</td>
+          <td>{{ phone2.model }}</td>
+          <td>{{ compared.Model }}</td>
         </tr>
         <tr>
           <td>Price</td>
-          <td>Feature 2</td>
-          <td>Feature 2</td>
-          <td>Comparison of Feature 2</td>
+          <td>Rs. {{ phone.price }}</td>
+          <td>Rs. {{ phone2.price }}</td>
+          <td>{{ compared.Price }}</td>
         </tr>
         <tr>
           <td>Condition</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.condition }}</td>
+          <td>{{ phone2.condition }}</td>
+          <td>{{ compared.Condition }}</td>
         </tr>
         <tr>
           <td>Battery</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.battery }} mAh</td>
+          <td>{{ phone2.battery }} mAh</td>
+          <td>{{ compared.Battery }}</td>
         </tr>
         <tr>
           <td>Storage</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.storage }} GB</td>
+          <td>{{ phone2.storage }} GB</td>
+          <td>{{ compared.Storage }}</td>
         </tr>
         <tr>
           <td>Ram</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.ram }} GB</td>
+          <td>{{ phone2.ram }} GB</td>
+          <td>{{ compared.Ram }}</td>
         </tr>
         <tr>
           <td>Front Camera</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.front_camera }} MP</td>
+          <td>{{ phone2.front_camera }} MP</td>
+          <td>{{ compared.Front_Camera }}</td>
         </tr>
         <tr>
           <td>Back Camera</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.back_camera }} MP</td>
+          <td>{{ phone2.back_camera }} MP</td>
+          <td>{{ compared.Back_Camera }}</td>
         </tr>
         <tr>
           <td>Size</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.size }} inch</td>
+          <td>{{ phone2.size }} inch</td>
+          <td>{{ compared.Size }}</td>
         </tr>
         <tr>
           <td>Resolutation</td>
-          <td>Feature 3</td>
-          <td>Feature 3</td>
-          <td>Comparison of Feature 3</td>
+          <td>{{ phone.res }}</td>
+          <td>{{ phone2.res }}</td>
+          <td>{{ compared.Resolution }}</td>
         </tr>
-
       </tbody>
     </table>
-    
+  </div>
+
+    <div style="text-align: center; margin-top: 50px; width: 50%; margin-left: 30%;">
+      <ul class="list-group">
+        <p style="color:rgba(15, 84, 25, 0.719);font-size: 30px;"> GENERAL INFO BASED ON THE FEATURES PROVIDED</p>
+        <li class="list-group-item">1. {{ compared.gaming }}</li>
+        <li class="list-group-item">2. {{ compared.general }}</li>
+        <li class="list-group-item">3. {{ compared.photography }}</li>
+        <li class="list-group-item">4. {{ compared.movie }}</li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

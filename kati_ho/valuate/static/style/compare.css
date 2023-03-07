@@ -27,7 +27,7 @@
     text-decoration: underline white;
     color:blanchedalmond;
   }
-  .text{
+/*   .text{
 color:rgb(84, 80, 80);
 font-size: 20px;
 font-family:'Times New Roman', Times, serif;
@@ -45,11 +45,11 @@ text-align: center;
   display: inline;
 }
 table {
-  border-collapse: collapse;
-  width: 60%;
   margin-left: 20%;
-}
-
+  border-collapse: collapse;
+  width: 70%;
+} */
+/* 
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -63,4 +63,42 @@ th {
 
 tr:hover {    
   background-color: antiquewhite;
+} */
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
 }
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style for the comparison results list */
+.list-group {
+  margin: 50px auto;
+  width: 70%;
+  float: left
+}
+
+.list-group-item {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Style for the title */
+p {
+  color: rgba(15, 84, 25, 0.719);
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style for the container */

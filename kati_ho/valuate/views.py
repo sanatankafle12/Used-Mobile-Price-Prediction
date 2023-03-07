@@ -1,12 +1,11 @@
 from django.http import HttpResponse
-from . import practice,valuateprice,recommendmobile
+from . import valuateprice,recommendmobile,comparemobile
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Listing
 from .forms import valuate_listing
-
 
 
 def homepage(request):
@@ -66,8 +65,13 @@ def valuate(request):
     return render(request,'valuate.html')
 
 def compare(request):
-    phone_id = request.GET.get('phone_id')
-    return render(request,'compare.html')
+    my_object = get_object_or_404(Listing,id=5)
+    my_object2 = get_object_or_404(Listing,id=6)
+    phone_1 = {'Brand':my_object.brand,'Model':my_object.model,'Price':my_object.price,'Condition':my_object.condition,'Battery':my_object.battery,'Storage':my_object.storage,'Ram':my_object.ram,'Front Camera':my_object.front_camera,'Back Camera': my_object.back_camera,'Size':my_object.size,'Resolution':my_object.res}
+    phone_2 = {'Brand':my_object2.brand,'Model':my_object2.model,'Price':my_object2.price,'Condition':my_object2.condition,'Battery':my_object2.battery,'Storage':my_object2.storage,'Ram':my_object2.ram,'Front Camera':my_object2.front_camera,'Back Camera': my_object2.back_camera,'Size':my_object2.size,'Resolution':my_object2.res}
+    compared_list = comparemobile.compare(phone_1,phone_2)
+    compared_list = {'Brand':compared_list[0],'Model':compared_list[1],'Price':compared_list[2],'Condition':compared_list[3],'Battery':compared_list[4],'Storage':compared_list[5],'Ram':compared_list[6],'Front_Camera':compared_list[7],'Back_Camera': compared_list[8],'Size':compared_list[9],'Resolution':compared_list[10],'gaming':compared_list[11],'general':compared_list[12],'photography':compared_list[13],'movie':compared_list[14]}
+    return render(request, 'compare.html',{'phone':my_object,'phone2':my_object2,'compared':compared_list})
 
 def recommend(request):
     if(request.method == "POST"):
