@@ -80,11 +80,12 @@ def compare(request):
         phone_1 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
         compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "} 
         return render(request,'compare.html',{'phone':phone_1,'phone2':my_object2,'compared':compared_list})
-    if(idd==None and idd2==None):
+    elif(idd==None and idd2==None):
         phone_1 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
+        phone_2 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
         compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
         return render(request,'compare.html',{'phone':phone_1,'phone2':phone_2,'compared':compared_list})
-    if(idd!=None and idd2==None):
+    elif(idd!=None and idd2==None):
         my_object = get_object_or_404(Listing,id=idd)
         phone_2 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
         compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "} 
