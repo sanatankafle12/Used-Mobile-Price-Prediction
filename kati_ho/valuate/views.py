@@ -65,13 +65,30 @@ def valuate(request):
     return render(request,'valuate.html')
 
 def compare(request):
-    my_object = get_object_or_404(Listing,id=5)
-    my_object2 = get_object_or_404(Listing,id=6)
-    phone_1 = {'Brand':my_object.brand,'Model':my_object.model,'Price':my_object.price,'Condition':my_object.condition,'Battery':my_object.battery,'Storage':my_object.storage,'Ram':my_object.ram,'Front Camera':my_object.front_camera,'Back Camera': my_object.back_camera,'Size':my_object.size,'Resolution':my_object.res}
-    phone_2 = {'Brand':my_object2.brand,'Model':my_object2.model,'Price':my_object2.price,'Condition':my_object2.condition,'Battery':my_object2.battery,'Storage':my_object2.storage,'Ram':my_object2.ram,'Front Camera':my_object2.front_camera,'Back Camera': my_object2.back_camera,'Size':my_object2.size,'Resolution':my_object2.res}
-    compared_list = comparemobile.compare(phone_1,phone_2)
-    compared_list = {'Brand':compared_list[0],'Model':compared_list[1],'Price':compared_list[2],'Condition':compared_list[3],'Battery':compared_list[4],'Storage':compared_list[5],'Ram':compared_list[6],'Front_Camera':compared_list[7],'Back_Camera': compared_list[8],'Size':compared_list[9],'Resolution':compared_list[10],'gaming':compared_list[11],'general':compared_list[12],'photography':compared_list[13],'movie':compared_list[14]}
-    return render(request, 'compare.html',{'phone':my_object,'phone2':my_object2,'compared':compared_list})
+    idd = request.session.get('phone1_id')
+    idd2 = request.session.get('phone2_id')
+    if(idd!=None and idd2!=None):
+        my_object = get_object_or_404(Listing,id=idd)
+        my_object2 = get_object_or_404(Listing,id=idd2)
+        phone_1 = {'Brand':my_object.brand,'Model':my_object.model,'Price':my_object.price,'Condition':my_object.condition,'Battery':my_object.battery,'Storage':my_object.storage,'Ram':my_object.ram,'Front Camera':my_object.front_camera,'Back Camera': my_object.back_camera,'Size':my_object.size,'Resolution':my_object.res}
+        phone_2 = {'Brand':my_object2.brand,'Model':my_object2.model,'Price':my_object2.price,'Condition':my_object2.condition,'Battery':my_object2.battery,'Storage':my_object2.storage,'Ram':my_object2.ram,'Front Camera':my_object2.front_camera,'Back Camera': my_object2.back_camera,'Size':my_object2.size,'Resolution':my_object2.res}
+        compared_list = comparemobile.compare(phone_1,phone_2)
+        compared_list = {'Brand':compared_list[0],'Model':compared_list[1],'Price':compared_list[2],'Condition':compared_list[3],'Battery':compared_list[4],'Storage':compared_list[5],'Ram':compared_list[6],'Front_Camera':compared_list[7],'Back_Camera': compared_list[8],'Size':compared_list[9],'Resolution':compared_list[10],'gaming':compared_list[11],'general':compared_list[12],'photography':compared_list[13],'movie':compared_list[14]}
+        return render(request,'compare.html',{'phone':my_object,'phone2':my_object2,'compared':compared_list})
+    elif(idd==None and idd2!=None):
+        my_object2 = get_object_or_404(Listing,id=idd2)
+        phone_1 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
+        compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "} 
+        return render(request,'compare.html',{'phone':phone_1,'phone2':my_object2,'compared':compared_list})
+    if(idd==None and idd2==None):
+        phone_1 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
+        compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
+        return render(request,'compare.html',{'phone':phone_1,'phone2':phone_2,'compared':compared_list})
+    if(idd!=None and idd2==None):
+        my_object = get_object_or_404(Listing,id=idd)
+        phone_2 = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "}
+        compared_list = {'Brand':" ",'Model':" ",'Price':" ",'Condition':" ",'Battery':" ",'Storage':" ",'Ram':" ",'Front Camera':" ",'Back Camera': " ",'Size':" ",'Resolution':" "} 
+        return render(request,'compare.html',{'phone':my_object,'phone2':phone_2,'compared':compared_list})
 
 def recommend(request):
     if(request.method == "POST"):
@@ -113,3 +130,18 @@ def sell_product(request):
     return render(request,'sell_product.html',context)
 
 
+def phone1(request):
+  if request.method == 'POST':
+    phone_id = request.POST.get('_id')
+    # Save the phone_id in the session
+    request.session['phone1_id'] = phone_id
+    return redirect('compare')
+  return render(request, 'home.html')
+
+def phone2(request):
+  if request.method == 'POST':
+    phone_id = request.POST.get('_id')
+    # Save the phone_id in the session
+    request.session['phone2_id'] = phone_id
+    return redirect('compare')
+  return render(request, 'home.html')

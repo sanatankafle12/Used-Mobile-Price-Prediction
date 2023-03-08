@@ -14,6 +14,8 @@ urlpatterns = [
     path('sell/',views.sell_product,name='sell'),
     path('recommend/',views.recommend,name='recommend'),
     path('logout/',views.logout,name='logout'),
+    path('phone1/', views.phone1, name='phone1'),
+    path('phone2/', views.phone2, name='phone2'),
 ]
 
 urlpatterns+=staticfiles_urlpatterns()
