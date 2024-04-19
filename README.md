@@ -21,3 +21,8 @@ https://github.com/sanatankafle12/minor_project/assets/42962016/53d2e3b5-7ec1-4c
 <h1>Link to the website:</h1>
 - http://skafle239.pythonanywhere.com/
 
+<h1>Run on your Machine</h1>
+clone the github repo
+Install the required packages from requirements.txt
+setup virtual environment
+run python manage.py runserver
