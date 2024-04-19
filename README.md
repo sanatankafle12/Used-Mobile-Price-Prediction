@@ -5,10 +5,13 @@ This repo consists of the project done in the 6th semester while studying comput
 <ol>
   <li>Scrapped Data From Websites Second hand market websites</li>
   <li>The data had many missing values that were cleaned</li>
-  <li><ul>Models For Validation</ul><li>Linear Regression - MAPE - 23%</li>
-<li>Gradient Boosting - MAPE - 14%</li>
-<li>Random Forest - MAPE - 9% [Chosen]</li>
-</ul></li>
+  <li>
+    <ul>Models For Validation
+      <li>Linear Regression - MAPE - 23%</li>
+      <li>Gradient Boosting - MAPE - 14%</li>
+      <li>Random Forest - MAPE - 9% [Chosen]</li>
+    </ul>
+  </li>
   <li>KNN was Used for Recommendation</li>
   <li>UI was created using Django and js,HTML,css</li>
 </ol>
